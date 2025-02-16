@@ -1,4 +1,4 @@
-
+***LIST***
 **Comparator**
 
 // public static class MyComparator implements Comparator<Integer> {
@@ -20,3 +20,130 @@
     //         return o1.length()-o2.length();
     //     }
     // }
+
+
+
+**CopyOnWriteArrayList**
+CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
+// "Copy on Write" means that whenever a write operation
+            // like adding or removing an element
+            // instead of directly modifying the existing list
+            // a new copy of the list is created, and the modification is applied to that copy
+            // This ensures that other threads reading the list while it’s being modified are unaffected.
+
+            // Read Operations: Fast and direct, since they happen on a stable list without interference from modifications.
+            // Write Operations: A new copy of the list is created for every modification.
+            //                  The reference to the list is then updated so that subsequent reads use this new list.
+
+            // Example: notepad --> notepad-copy
+
+
+**ArrayList**
+//Key Characteristics:
+          Dynamic Size: Unlike a regular array, an ArrayList can grow or shrink in size as elements are added or removed.
+          Type-Safe: It can store objects of a specified type (e.g., String, Integer) using generics.
+          Backed by an Array: Internally, it uses an array to store elements, but it automatically handles resizing when needed.
+          Random Access: Provides fast access to elements by index (O(1) time complexity).
+          Resizing Mechanism: Size Increase by 1.5 times
+//Common Operations:
+          Adding Elements: add(element) – Adds an element to the end or at a specific index.
+          Removing Elements: remove(index) or remove(object) – Removes an element by index or value.
+          Accessing Elements: get(index) – Retrieves an element at a specific index.
+          Size: size() – Returns the number of elements in the ArrayList.
+          Clearing: clear() – Removes all elements.
+Limitations:
+          Slower for insertions/deletions at the beginning or middle (O(n) time complexity due to shifting elements).
+          Uses more memory than a regular array due to its dynamic nature.
+
+
+**LinkedList**
+A LinkedList is a data structure that consists of a sequence of nodes
+where each node contains data and a reference (or link) to the next node.
+In Java, LinkedList is a class in the Java Collections Framework that implements a doubly-linked list,
+meaning each node also has a reference to the previous node.
+
+//Key Characteristics:
+          Dynamic Size: Like ArrayList, a LinkedList can grow or shrink as elements are added or removed.
+          Node-Based: Elements are stored in nodes, and each node links to the next (and previous, in a doubly-linked list).
+          Non-Contiguous Memory: Unlike arrays, nodes are not stored in contiguous memory locations, allowing for efficient insertions and deletions.
+          Type-Safe: Supports generics to store objects of a specific type (e.g., String, Integer).
+
+
+//Common Operations:
+          Adding Elements:add(element) – Adds an element to the end.
+                          addFirst(element) / addLast(element) – Adds an element to the start or end.
+          Removing Elements:remove(index) or remove(object) – Removes an element by index or value.
+                          removeFirst() / removeLast() – Removes the first or last element.
+          Accessing Elements: get(index) – Retrieves an element at a specific index (slower than ArrayList).
+          Size: size() – Returns the number of elements.
+          Clearing: clear() – Removes all elements.
+
+//Advantages:
+          Efficient insertions and deletions, especially at the beginning or end (O(1) time complexity).
+          No need for resizing, unlike ArrayList.
+          Doubly-linked nature allows bidirectional traversal.
+//Limitations:
+          Slower access to elements by index (O(n) time complexity, as it requires traversal).
+          Higher memory overhead due to storing node references.
+          Not suitable for random access or frequent index-based operations.
+
+
+
+**Vector**
+A Vector is a dynamic array-like data structure in Java that is part of the Java Collections Framework.
+It is similar to ArrayList but with some key differences, such as being synchronized (thread-safe) and having a legacy status.
+//Key Characteristics:
+          Dynamic Size: Like ArrayList, a Vector can grow or shrink as elements are added or removed.
+          Synchronized: All methods in Vector are synchronized, making it thread-safe for use in multi-threaded environments.
+          Backed by an Array: Internally, it uses an array to store elements and automatically resizes when needed.
+          Legacy Class: Introduced in Java 1.0, it is considered a legacy class but still supported for backward compatibility.
+          Type-Safe: Supports generics (since Java 1.5) to store objects of a specific type (e.g., String, Integer).
+          Resizing Mechanism: Size Increase by 2 times
+//Common Operations:
+          Adding Elements: add(element) – Adds an element to the end.
+                           addElement(element) – Legacy method to add an element (similar to add).
+          Removing Elements:remove(index) or remove(object) – Removes an element by index or value.
+                            removeElement(object) – Legacy method to remove an element.
+          Accessing Elements: get(index) – Retrieves an element at a specific index.
+          Size: size() – Returns the number of elements.
+          Capacity: capacity() – Returns the current capacity (size of the underlying array).
+          Clearing: clear() or removeAllElements() – Removes all elements.
+//Advantages:
+          Thread-safe by default, useful in multi-threaded applications.
+          Dynamic resizing, similar to ArrayList.
+          Backward compatibility with older Java code.
+//Limitations:
+          Performance Overhead: Synchronization adds overhead, making it slower than ArrayList for single-threaded applications.
+          Legacy Status: Many of its methods (e.g., addElement, removeElement) are outdated, and ArrayList is preferred in modern Java code.
+          Higher memory usage due to synchronization and capacity management.
+
+
+
+**Stack**
+A Stack is a data structure that follows the Last-In-First-Out (LIFO) principle
+meaning the last element added is the first one to be removed.
+In Java, Stack is a class that extends Vector and is part of the Java Collections Framework.
+//Key Characteristics:
+          LIFO Order: Elements are added and removed from the top of the stack.
+          Dynamic Size: Like Vector, it can grow or shrink as elements are added or removed.
+          Synchronized: Inherits thread-safety from Vector, making it suitable for multi-threaded environments.
+          Legacy Class: While still functional, it is considered outdated, and modern alternatives like Deque (e.g., ArrayDeque) are recommended.
+//Core Operations:
+          Push: push(element) – Adds an element to the top of the stack.
+          Pop: pop() – Removes and returns the top element from the stack. Throws EmptyStackException if the stack is empty.
+          Peek: peek() – Returns the top element without removing it. Throws EmptyStackException if the stack is empty.
+          Empty Check: empty() – Returns true if the stack is empty, false otherwise.
+          Search: search(element) – Returns the 1-based position of an element from the top (or -1 if not found).
+//Advantages:
+          Simple implementation of the LIFO principle.
+          Thread-safe due to synchronization (inherited from Vector).
+          Built-in methods for stack-specific operations.
+//Limitations:
+          Performance Overhead: Synchronization makes it slower than unsynchronized alternatives like ArrayDeque.
+          Legacy Status: Extends Vector, which is outdated. Modern Java recommends using Deque implementations (e.g., ArrayDeque) for stack operations.
+          Limited Functionality: Lacks some features of more modern data structures.
+
+
+
+
+***MAP***
