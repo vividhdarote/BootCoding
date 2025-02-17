@@ -1,6 +1,6 @@
 ***LIST***
-**Comparator**
 
+**Comparator**
 // public static class MyComparator implements Comparator<Integer> {
     //     // In what order we will get the list sorted ascending or descending will be decided by using this compare method
     //     // compare method return positive value if o1 > o2  order will be ascending and negative value if o1 < o2 order will be descending
@@ -147,3 +147,139 @@ In Java, Stack is a class that extends Vector and is part of the Java Collection
 
 
 ***MAP***
+
+A Map is an interface that represents a data structure storing key-value pairs.
+//Key Characteristics :
+          Key-Value Pairs:        Each entry in a Map consists of a key and its associated value.
+                                  Keys are unique, but values can be duplicated.
+          No Duplicates for Keys: A Map cannot contain duplicate keys.
+                                  If you try to insert a duplicate key, the existing value for that key will be overwritten Or (Replaced).
+          Unordered by Default:   Most Map implementations (e.g., HashMap) do not guarantee any specific order of entries.
+                                  However, some implementations like
+                                  LinkedHashMap (maintains insertion order) and
+                                  TreeMap (maintains sorted order) provide ordering.
+          Null Values:            Most Map implementations allow null as a value, and some (e.g., HashMap) even allow null as a key.
+
+
+**HashMap**
+//Key Features of HashMap:
+          Key-Value Storage: Each entry in a HashMap consists of a unique key and its associated value.
+                             Keys are unique, but values can be duplicated.
+          Hashing Mechanism: Uses a hash function to map keys to array indices (buckets) for storage.
+                             This allows for constant-time (O(1)) average-case performance for basic operations.
+          No Order Guarantee: Does not maintain any specific order of entries (neither insertion order nor sorted order).
+          Null Handling: Allows one null key and multiple null values.
+          Not Synchronized: Not thread-safe by default. For concurrent access, use ConcurrentHashMap instead.
+
+//How HashMap Works Internally:
+          Underlying Structure: A HashMap uses an array of buckets,
+                                where each bucket can store multiple entries in case of hash collisions (using linked lists or trees).
+          Hashing: When a key is provided, its hashCode() method is called to generate a hash code, which is then mapped to an index in the array.
+
+//Collision Handling:
+If two keys hash to the same index (collision), they are stored in the same bucket.
+          Before Java 8:            Collisions were handled using linked lists.
+          After Java 8 -----------> the number of collisions exceeds a threshold,
+                                    the linked list is converted to a balanced binary tree (red-black tree)
+                                    to improve performance (O(log n) instead of O(n) for lookups).
+          Load Factor and Resizing: The default load factor is 0.75.
+                                    When the number of entries exceeds load factor * current capacity,
+                                    the HashMap resizes by doubling its capacity and redistributing entries.
+
+//Key Characteristics:
+   *Performance:
+          Average time complexity for get(), put(), and remove() is O(1) (assuming good hash distribution).
+          Worst-case time complexity is O(log n) (due to tree conversion for collisions in Java 8+).
+   *Initial Capacity and Load Factor:
+          Default initial capacity: 16.
+          Default load factor: 0.75 (balances time and space efficiency).
+          You can specify custom values in the constructor for optimization.
+   *Non-Synchronized:
+          Not thread-safe. Use Collections.synchronizedMap() or ConcurrentHashMap for thread safety.
+
+//Common Methods of HashMap:
+          put(K key, V value): Associates the specified value with the specified key. If the key already exists, the old value is replaced.
+          get(Object key): Returns the value associated with the specified key, or null if the key is not found.
+          remove(Object key): Removes the entry for the specified key.
+          containsKey(Object key): Checks if the map contains the specified key.
+          containsValue(Object value): Checks if the map contains the specified value.
+          keySet(): Returns a Set of all keys in the map.
+          values(): Returns a Collection of all values in the map.
+          entrySet(): Returns a Set of key-value pairs (entries) in the map.
+          size(): Returns the number of key-value pairs.
+          isEmpty(): Checks if the map is empty.
+          clear(): Removes all entries from the map.
+
+
+**LinkedHashMap**
+//Key Features of LinkedHashMap:
+          Key-Value Storage: Like other Map implementations, it stores data as key-value pairs,
+                             with unique keys and potentially duplicate values.
+          Insertion Order Maintenance: Maintains a doubly-linked list of entries,
+                                       ensuring that the order in which entries are added is preserved during iteration.
+          Hash Table Efficiency: Uses a hash table for storing entries,
+                                 providing constant-time (O(1)) average-case performance for basic operations like get() and put().
+          Null Handling: Allows one null key and multiple null values, similar to HashMap.
+          Not Synchronized: Not thread-safe by default. For concurrent access, use Collections.synchronizedMap() or ConcurrentHashMap.
+
+//How LinkedHashMap Works Internally:
+          Underlying Structure: Combines a hash table (for fast lookups) with a doubly-linked list (to maintain order).
+                                Each entry in the hash table is linked to the next and previous entries in the list.
+          Order Preservation: The linked list ensures that entries are iterated in the same order they were inserted
+                              (or accessed, if access-order mode is enabled).
+          Collision Handling: Like HashMap, it handles hash collisions using linked lists or balanced trees (Java 8+),
+                              but it also maintains the linked list for order tracking.
+
+//Key Characteristics:
+    Performance:
+          Average time complexity for get(), put(), and remove() is O(1) (assuming good hash distribution).
+          Slightly slower than HashMap due to the overhead of maintaining the linked list.
+    Order Options:
+          Insertion Order (default): Entries are iterated in the order they were added.
+          Access Order (optional): Entries are reordered based on access, with the most recently accessed entry moved to the end.
+                                   Useful for implementing caches like LRU (Least Recently Used).
+    Initial Capacity and Load Factor:
+          Default initial capacity: 16.
+          Default load factor: 0.75 (balances time and space efficiency).
+          Custom values can be specified in the constructor for optimization.
+
+
+**SortedMap**
+A SortedMap is an interface in the Java Collections Framework that extends the Map interface and
+provides a way to store key-value pairs in a sorted order based on the keys.
+It ensures that the keys are maintained in a specific order,
+typically their natural ordering or a custom order defined by a Comparator.
+SortedMap is part of the java.util package and is designed for use cases where ordered traversal of keys is required.
+//Key Features :
+          Sorted Keys: The keys in a SortedMap are automatically sorted according to their natural ordering (if they implement Comparable)
+                       or a custom Comparator provided at creation.
+          Key-Value Pairs: Like other Map implementations, it stores data as key-value pairs, with unique keys and potentially duplicate values.
+          Navigable Operations: Provides methods to access subsets of the map based on key ranges,
+                                as well as operations to retrieve the first and last keys.
+          No Null Keys (in most implementations): Since sorting requires comparison, most implementations
+                                                  (like TreeMap) do not allow null keys unless a custom Comparator explicitly supports it.
+          Not Synchronized: Not thread-safe by default. For concurrent access, use Collections.synchronizedSortedMap() or ConcurrentSkipListMap.
+//Key Characteristics:
+   Performance:
+          Time complexity for basic operations like get(), put(), and remove() is O(log n),
+          as most implementations use balanced trees (e.g., red-black trees).
+          Suitable for applications where sorted order is more important than raw performance (compared to HashMap's O(1)).
+   Ordering:
+          Keys are sorted either by their natural ordering (if they implement Comparable) or by a Comparator provided during map creation.
+          The order is maintained dynamically as entries are added or removed.
+   Subset Views:
+          Provides methods to create submaps based on key ranges, such as subMap(), headMap(), and tailMap().
+
+//Common Implementations of SortedMap:
+   **TreeMap:
+         The most widely used implementation of SortedMap.
+         Uses a red-black tree (a self-balancing binary search tree) for storage.
+         Maintains keys in sorted order with O(log n) performance for basic operations.
+         Does not allow null keys by default (unless a custom Comparator supports it).
+   **ConcurrentSkipListMap (Thread-Safe):
+         A concurrent implementation of SortedMap that uses a skip list data structure.
+         Provides thread-safe operations without locking the entire map.
+         Maintains sorted order and supports O(log n) performance for basic operations.
+         Does not allow null keys.
+   **NavigableMap:
+         A NavigableMap is an interface in the Java Collections Framework that extends the SortedMap interface

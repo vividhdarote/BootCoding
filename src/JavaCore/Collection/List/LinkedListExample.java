@@ -1,6 +1,8 @@
 package JavaCore.Collection.List;
 
 
+import org.w3c.dom.Node;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -151,8 +153,6 @@ public class LinkedListExample {
 
         System.out.println("Size of list: " + list3.size());
         // Output: 2000
-
-
 
 
     }
