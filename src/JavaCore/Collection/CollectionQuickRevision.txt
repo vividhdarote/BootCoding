@@ -283,3 +283,28 @@ SortedMap is part of the java.util package and is designed for use cases where o
          Does not allow null keys.
    **NavigableMap:
          A NavigableMap is an interface in the Java Collections Framework that extends the SortedMap interface
+
+
+**HashTable
+A hash table (also known as a hash map) is a data structure that implements an associative array abstract data type,
+ a structure that can map keys to values. Here's a breakdown of how it works and its key properties:
+
+//Concept:
+         Hashing: Each key is converted into an array index via a hash function. This function maps the key to a unique index in the array, known as a "bucket" or "slot".
+//Key Properties:
+         Fast Access: Hash tables offer nearly constant-time performance, O(1),
+                      for basic operations like insert, delete, and lookup, assuming a good hash function and no or minimal collisions.
+         Collisions: When two keys hash to the same index (a collision), hash tables use various methods to handle this:
+         Chaining: Each bucket holds a linked list or another data structure where items are stored if there's a collision.
+         Open Addressing: If a collision occurs, the algorithm looks for the next empty slot in the array,
+                          using strategies like linear probing, quadratic probing, or double hashing.
+         Load Factor: The ratio of the number of entries to the size of the hash table.
+                      If this gets too high, performance can degrade, leading to the need for rehashing where the table size is increased,
+                      and all entries are rehashed into the new larger table.
+         Hash Function: A critical component which should distribute keys uniformly across the hash table to minimize collisions.
+                        A poor hash function can lead to clustering and decreased performance.
+//Use Cases:
+         Databases: For indexing records.
+         Caches: To store recently used data for quick retrieval.
+
+
