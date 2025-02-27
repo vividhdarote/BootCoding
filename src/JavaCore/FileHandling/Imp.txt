@@ -1,0 +1,12 @@
+
+Download json jar file:
+https://mavenlibs.com/jar/file/org.json/json
+
+set the external library:
+Open your project in IntelliJ IDEA.
+Right-click on your project in the Project Explorer → Open Module Settings (or press F4).
+Go to the Dependencies tab.
+Click the "+" icon → JARs or directories...
+Select your JAR file and click OK.
+Ensure the Scope is set to Compile (or adjust it if needed: Compile, Runtime, etc.).
+Click Apply and OK.
