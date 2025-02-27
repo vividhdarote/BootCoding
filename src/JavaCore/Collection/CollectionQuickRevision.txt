@@ -308,3 +308,23 @@ A hash table (also known as a hash map) is a data structure that implements an a
          Caches: To store recently used data for quick retrieval.
 
 
+*** Set ***
+It implements the Set interface and is backed by a HashMap.
+No duplicates allowed — it only stores unique elements.
+Unordered — it doesn’t guarantee any specific order of elements.
+
+**HashSet
+
+Duplicates:  HashSet doesn’t allow duplicate elements.
+Null values: It allows a single null element.
+Time complexity:
+         add(), remove(), contains() — O(1) on average.
+         Due to hashing, operations are usually constant time.
+Order: Elements are unordered — use LinkedHashSet if ordering matters.
+
+
+**LinkedHashSet
+Insertion order: Maintains the order in which elements were inserted.
+No duplicates:   Identical elements are ignored.
+Null elements:   Allows one null value.
+Thread-safety:   Not synchronized — use Collections.synchronizedSet() if needed.
