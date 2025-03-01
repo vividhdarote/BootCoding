@@ -328,3 +328,13 @@ Insertion order: Maintains the order in which elements were inserted.
 No duplicates:   Identical elements are ignored.
 Null elements:   Allows one null value.
 Thread-safety:   Not synchronized — use Collections.synchronizedSet() if needed.
+
+**TreeSet
+It uses a Red-Black tree data structure internally to store elements,
+which means the elements are always sorted in natural order (ascending) or according to a custom comparator you provide.
+
+Key features of TreeSet:
+        No duplicates allowed (like all sets).
+        Sorted order of elements.
+        Null values are not allowed (from Java 7 onwards).
+        Not synchronized — if multiple threads need to access a TreeSet concurrently, you must explicitly synchronize it.
