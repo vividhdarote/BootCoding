@@ -6,6 +6,7 @@ Text.txt
 BootCoding.iml
 .idea
 OOPS.txt
+.gitignore
 ### Eclipse ###
 .apt_generated
 .classpath

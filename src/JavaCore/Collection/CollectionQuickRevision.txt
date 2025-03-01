@@ -338,3 +338,59 @@ Key features of TreeSet:
         Sorted order of elements.
         Null values are not allowed (from Java 7 onwards).
         Not synchronized — if multiple threads need to access a TreeSet concurrently, you must explicitly synchronize it.
+
+*** Queue ***
+a Queue is a collection used to hold elements before processing,
+following the FIFO (First-In-First-Out) principle.
+It’s part of the java.util package and is an interface,
+with common implementations like:
+        LinkedList (non-thread-safe)
+        PriorityQueue (ordered by natural ordering or comparator)
+        ArrayDeque (resizable array-based)
+        ConcurrentLinkedQueue (thread-safe, non-blocking)
+
+Important methods:
+        add(E e): Inserts the element into the queue (throws exception if full).
+        offer(E e): Inserts the element, returns false if full (no exception).
+        poll(): Retrieves and removes the head, returns null if empty.
+        remove(): Removes the head (throws exception if empty).
+        peek(): Retrieves the head without removing (returns null if empty).
+        element(): Retrieves the head without removing (throws exception if empty).
+Thread-safe queues:
+    If you need concurrency, check out:
+        ConcurrentLinkedQueue (non-blocking, thread-safe)
+        BlockingQueue (for producer-consumer scenarios)
+
+**Priority Queue
+        part of the Queue interface
+        orders elements based on their natural ordering (for primitives lowest first)
+        custom comparator for customised ordering
+        does not allow null elements
+
+*** Deque
+        double-ended queue
+        allows insertion and removal of elements from both ends
+        versatile than regular queues and stacks because they support all the operations of both
+
+    INSERTION METHODS:
+           addFirst(E e): Inserts the specified element at the front.
+           addLast(E e): Inserts the specified element at the end.
+           offerFirst(E e): Inserts the specified element at the front if possible.
+           offerLast(E e): Inserts the specified element at the end if possible.
+
+    REMOVAL METHODS
+            removeFirst(): Retrieves and removes the first element.
+            removeLast(): Retrieves and removes the last element.
+            pollFirst(): Retrieves and removes the first element, or returns null if empty.
+            pollLast(): Retrieves and removes the last element, or returns null if empty.
+
+    EXAMINATION METHODS
+            getFirst(): Retrieves, but does not remove, the first element.
+            getLast(): Retrieves, but does not remove, the last element.
+            peekFirst(): Retrieves, but does not remove, the first element, or returns null if empty.
+            peekLast(): Retrieves, but does not remove, the last element, or returns null if empty.
+
+    STACK METHODS
+            push(E e): Adds an element at the front (equivalent to addFirst(E e)).
+            pop(): Removes and returns the first element (equivalent to removeFirst())..
+
