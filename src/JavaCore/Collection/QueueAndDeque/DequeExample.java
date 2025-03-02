@@ -22,8 +22,13 @@ public class DequeExample {
         System.out.println(deque);
         //Output: [1, 9, 10, 15, 11]
 
+
+        //Checking
         System.out.println("First Element: " + deque.getFirst()); // Outputs 1
         System.out.println("Last Element: " + deque.getLast());   // Outputs 11
+
+
+        //Removing
         deque.removeFirst(); // Removes 1
         deque.pollLast();    // Removes 11
 
