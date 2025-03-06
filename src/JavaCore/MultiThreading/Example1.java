@@ -1,5 +1,7 @@
 package JavaCore.MultiThreading;
 
+// Thread Name
+
 public class Example1 extends Thread{
      public void run(){
          System.out.println(Thread.currentThread().getName());
@@ -10,6 +12,7 @@ public class Example1 extends Thread{
         Example1  t2 = new Example1();
         t1.start();
         t2.start();
+
     }
 }
 
