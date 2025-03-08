@@ -73,6 +73,5 @@ public class Example2 {
         Student1 voidStudent = name -> System.out.println(name+ " is call from non-return type");
         voidStudent.setName("Donald");
 
-
     }
 }
