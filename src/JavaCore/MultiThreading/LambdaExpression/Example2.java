@@ -50,7 +50,7 @@ public class Example2 {
         // you can also avoid writing datatype of interface in parentheses
         // (String name) can replace by (name) only
         Student mcaStudent = (name) ->{           //(String name) -> (name)
-          return  name+" is a MCA Student.";
+            return   name+" is a MCA Student.";
         };
         String name2 = mcaStudent.setName("Vividh");
         System.out.println(name2);
