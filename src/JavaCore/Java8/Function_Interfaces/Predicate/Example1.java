@@ -1,4 +1,4 @@
-package JavaCore.Java8.Predicate;
+package JavaCore.Java8.Function_Interfaces.Predicate;
 
 //@FunctionalInterface
 //Boolean value function: true/false
