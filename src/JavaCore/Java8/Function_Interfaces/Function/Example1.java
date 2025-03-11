@@ -1,4 +1,4 @@
-package JavaCore.Java8.Function_Interface;
+package JavaCore.Java8.Function_Interfaces.Function;
 
 //This is a functional interface whose functional method is apply(Object).
 // R apply(T t) – applies this function to the given argument.

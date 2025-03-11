@@ -1,4 +1,4 @@
-package JavaCore.Java8.Function_Interface;
+package JavaCore.Java8.Function_Interfaces.Function;
 
 //This concept can be applied in many fields and scenarios where data needs to be processed, filtered, or transformed.
 //  Filtering students based on their names, grades, or other attributes.
