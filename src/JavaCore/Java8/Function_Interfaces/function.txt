@@ -1,0 +1,10 @@
+Follow the Sequence
+1.Predicate
+2.Function
+3.Consumer
+4.Supplier
+5.BiPredicate
+6.BiFunction
+7.BiConsumer
+8.UnaryOperator
+9.BinaryOperator
