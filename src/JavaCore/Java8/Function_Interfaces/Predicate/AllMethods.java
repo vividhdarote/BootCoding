@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 public class AllMethods {
     public static void main(String[] args) {
 
-        Predicate<String> isStartWithLetterV = x -> x.toLowerCase().charAt(0) == 'v';
+        Predicate<String> isStartWithLetterV = x -> x.toLowerCase().charAt(0) == 'v';            //OR x.startsWith("V")
         Predicate<String> isEndWithLetterH = x -> x.toLowerCase().charAt(x.length() - 1) == 'h';
 
         //1. Predicate and
