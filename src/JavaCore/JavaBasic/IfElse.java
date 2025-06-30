@@ -6,7 +6,7 @@ public class IfElse {
 
 
     //1. If Statement
-    void ifStatement(){
+    public static void ifStatement(){
         int num = 10;
         if (num > 0) {
             System.out.println(num + " is positive.");
@@ -44,25 +44,12 @@ public class IfElse {
     //4.Nested If
     public static boolean NestedIf(int year) {
 
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        } else {
-            return true;
-        }
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
 
     //5.Switch Case
-    void SwitchCase(){
-        int day = 3;
+    void SwitchCase(int day) {
 
         switch (day) {
             case 1:
@@ -97,12 +84,12 @@ public class IfElse {
 
     public static void main(String[] args) {
         IfElse ob= new IfElse();
-        ob.ifStatement();
+        IfElse.ifStatement();
         ob.IfElseStatement();
         ob.IfElseIfStatement();
 
         Scanner s= new Scanner(System.in);
-        System.out.println("Enter Year: ");
+        System.out.print("Enter Year: ");
         int year=s.nextInt();
 
         if(IfElse.NestedIf(year)){
@@ -112,7 +99,9 @@ public class IfElse {
             System.out.println(year+" is not a leap year");
         }
 
-        ob.SwitchCase();
+        System.out.print("Enter Day: ");
+        int day = s.nextInt();
+        ob.SwitchCase(day);
 
 
 
@@ -121,25 +110,29 @@ public class IfElse {
 
 
 
-//Generate all the possible questions from the above code snippet:
-// 1. What is the purpose of the `ifStatement` method in the `IfElse` class?
-// 2. How does the `IfElseStatement` method determine if a number is positive or negative?
-// 3. What grading system is implemented in the `IfElseIfStatement` method?
-// 4. Explain the logic behind the nested `if` statements in the `NestedIf` method.
-// 5. How does the `SwitchCase` method determine the day of the week based on an integer input?
-// 6. What will be the output of the `ifStatement` method when `num` is set to 10?
-// 7. What happens if the `marks` variable in the `IfElseIfStatement` method is set to 65?
-// 8. How does the `NestedIf` method check if a year is a leap year?
-// 9. What is the significance of the `break` statement in the `SwitchCase` method?
-// 10. How can the `IfElse` class be modified to handle user input for the day of the week in the `SwitchCase` method?
-// 11. What will be the output if the `year` variable in the `NestedIf` method is set to 2000?
-// 12. Can the `IfElse` class be extended
-// to include additional methods for more complex conditional logic? If so, provide an example.
-// 13. How does the `if` statement in the `ifStatement` method differ from the `if-else` statement in the `IfElseStatement` method?
-// 14. What is the output of the `IfElseIfStatement` method when `marks` is set to 95?
-// 15. How can the `SwitchCase` method be modified to include an option for invalid input?
-// 16. What will be the output of the `SwitchCase` method if `day` is set to 8?
-// 17. How does the `NestedIf` method handle years that are divisible by 100 but not by 400?
-// 18. What is the purpose of using `Scanner` in the `main` method of the `IfElse` class?
-// 19. How can the `IfElse` class be tested to ensure all methods work as expected?
-// 20. What are the advantages of using `switch` statements over multiple `if-else` statements in the `SwitchCase` method?
+// all the possible questions from this topic
+// 1. What is the difference between if and if-else statements?
+// 2. How does the switch-case statement work in Java?
+// 3. Can you explain the concept of nested if statements?
+// 4. What is the purpose of the else-if ladder in Java?
+// 5. How do you handle multiple conditions in Java using if-else statements?
+// 6. What is the significance of the default case in a switch statement?
+// 7. How do you check for leap years using if-else statements?
+// 8. Can you provide an example of using a switch statement with strings?
+// answer: No, switch statements in Java do not support strings until Java 7. Prior to that, they only supported primitive data types and enums.
+// 9. How do you use the ternary operator as a shorthand for if-else statements?
+// 10. What are the advantages of using switch statements over if-else statements?
+// 11. How do you handle invalid input in switch-case statements?
+// 12. Can you explain the short-circuit evaluation in if statements?
+// 13. How do you use logical operators (AND, OR) in if statements?
+// 14. What is the difference between == and equals() in if statements?
+// answer: The == operator checks for reference equality, while the equals() method checks for value equality.
+// 15. How do you use if statements to validate user input?
+// 16. Can you explain the concept of fall-through in switch statements?
+// 17. How do you use switch statements with enums in Java?
+// 18. What is the role of break statements in switch-case blocks?
+// 19. How do you use if statements to compare strings in Java?
+// 20. Can you provide an example of using nested if statements for complex conditions?
+// 21. How do you use switch statements with character data types?
+// 22. What is the difference between switch statements and if-else statements in terms of performance?
+// 23. How do you handle multiple cases in a switch statement?
