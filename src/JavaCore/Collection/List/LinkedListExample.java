@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class LinkedListExample {
     public static void main(String[] args) {
-        LinkedList<Integer> list=new LinkedList<>();
+        LinkedList<Integer> list = new LinkedList<>();
 
         //1.adding element
         list.add(1);
@@ -20,7 +20,7 @@ public class LinkedListExample {
         //Output: [1, 2, 3, 4]
 
         //2.add at index value
-        list.add(1,20);
+        list.add(1, 20);
         System.out.println(list);
         //Output: [1, 20, 2, 3, 4]
 
@@ -32,7 +32,7 @@ public class LinkedListExample {
         //Output: [0, 1, 20, 2, 3, 4, 5]
 
         //5.replace at index value
-        list.set(2,10);
+        list.set(2, 10);
         System.out.println(list);
         //Output: [0, 1, 10, 2, 3, 4, 5]
 
@@ -46,7 +46,7 @@ public class LinkedListExample {
 
 
         //7.access with for loop
-        for(int i : list){
+        for (int i : list) {
             System.out.println(i);
         }
       /*  Output:
@@ -74,8 +74,8 @@ public class LinkedListExample {
         //OUtput: [1, 2, 3, 4]
 
         //10.delete First and Last Occurance number
-        list.add(2,1);
-        list.add(3,4);
+        list.add(2, 1);
+        list.add(3, 4);
         System.out.println(list);
         //output: [1,2,1,4,3,4]
 
@@ -103,21 +103,21 @@ public class LinkedListExample {
         list.add(7);
         System.out.println(list);
         //Output: [1, 2, 3, 4, 5, 6, 7]
-        list.removeIf(x-> x%2==0);
+        list.removeIf(x -> x % 2 == 0);
         System.out.println(list);
         //Output: [1, 3, 5, 7]
 
         //======================================================//
-        LinkedList<String> animals =new LinkedList<>(Arrays.asList("Cat","Dog","Elephant"));
-        LinkedList<String> animalsToRemove =new LinkedList<>(Arrays.asList("Dog","Lion"));
-        System.out.println("Animals:"+animals );
+        LinkedList<String> animals = new LinkedList<>(Arrays.asList("Cat", "Dog", "Elephant"));
+        LinkedList<String> animalsToRemove = new LinkedList<>(Arrays.asList("Dog", "Lion"));
+        System.out.println("Animals:" + animals);
         //Output: Animals:[Cat, Dog, Elephant]
 
-        System.out.println("AnimalsToRemove: "+animalsToRemove);
+        System.out.println("AnimalsToRemove: " + animalsToRemove);
         //Output:  AnimalsToRemove: [Dog, Lion]
 
         animals.remove(animalsToRemove);
-        System.out.println("After Removing: :"+animals);
+        System.out.println("After Removing: :" + animals);
         //After Removing: :[Cat, Dog, Elephant]
         //Output
         //Not change because Arrays.asList is unchangeable
@@ -146,8 +146,7 @@ public class LinkedListExample {
         try {
             t1.join();
             t2.join();
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 

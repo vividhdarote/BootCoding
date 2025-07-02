@@ -6,30 +6,30 @@ import java.util.Stack;
 
 public class StackExample {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        Stack <Integer> list=new Stack<>();
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> list = new Stack<>();
 
         //1.Pushing or Adding
         System.out.print("Enter NO. of element you want to store: ");
-        int a=sc.nextInt();
-        for(int i=1;i<=a;i++){
-            System.out.print("Enter the "+i+" element: ");
-            int b=sc.nextInt();
+        int a = sc.nextInt();
+        for (int i = 1; i <= a; i++) {
+            System.out.print("Enter the " + i + " element: ");
+            int b = sc.nextInt();
             list.push(b);
         }
 
-        System.out.println("Stack: "+list);
+        System.out.println("Stack: " + list);
         //Output:Stack: [10, 20, 30, 40, 50]
 
         //2.Peek Or Access top element
-        if(!list.isEmpty()){
-            System.out.println("Peeking: "+list.peek());
+        if (!list.isEmpty()) {
+            System.out.println("Peeking: " + list.peek());
         }
         //Output: Peeking: 50
 
         //3.Pop Or Delete top element
         list.pop();
-        System.out.println("Removing: "+list);
+        System.out.println("Removing: " + list);
         //Output: Removing: [10, 20, 30, 40]
 
         //4.Access
@@ -72,14 +72,12 @@ public class StackExample {
         try {
             t1.join();
             t2.join();
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         System.out.println("Size of list: " + list3.size());
-        // Output: 2000
-
+        // Output: 2000 accurately because Stack is synchronized
 
 
     }

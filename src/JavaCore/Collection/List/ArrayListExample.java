@@ -122,7 +122,7 @@ public class ArrayListExample {
         t2.start();
 
         try {
-            t1.join();
+            t1.join();  //join() waits for the thread to die
             t2.join();
         }
         catch (InterruptedException e) {

@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class VectorExample {
     public static void main(String[] args) {
-        Vector <String> list= new Vector<>();
+        Vector<String> list = new Vector<>();
 
 
         //1.adding element
@@ -19,7 +19,7 @@ public class VectorExample {
         //Output:[Vividh, Sharukh, Kumar, Abhijeet, Anagha, Sakshi]
 
         //2.add at index value
-        list.add(1,"Anshul");
+        list.add(1, "Anshul");
         System.out.println(list);
         //Output:[Vividh, Anshul, Sharukh, Kumar, Abhijeet, Anagha, Sakshi]
 
@@ -31,7 +31,7 @@ public class VectorExample {
         //Output:[Gajju, Vividh, Anshul, Sharukh, Kumar, Abhijeet, Anagha, Sakshi, Donald]
 
         //5.replace at index value
-        list.set(8,"Harsh");
+        list.set(8, "Harsh");
         System.out.println(list);
         //Output:[Gajju, Vividh, Anshul, Sharukh, Kumar, Abhijeet, Anagha, Sakshi, Harsh]
 
@@ -44,7 +44,7 @@ public class VectorExample {
         //Output:Gajju
 
         //7.access by for loop
-        for(String x : list){
+        for (String x : list) {
             System.out.println(x);
         }
      /*   Output:
@@ -60,7 +60,7 @@ public class VectorExample {
 */
 
         //8.check value existence
-        System.out.println("Is 'Vividh' Available: "+list.contains("Vividh"));
+        System.out.println("Is 'Vividh' Available: " + list.contains("Vividh"));
         //Output:Is 'Vividh' Available: true
 
         //9.remove by Value
@@ -82,10 +82,9 @@ public class VectorExample {
 
         //12.We can check the initial capacity of Vector unliked ArrayList and LinkedList
         //Dynamic size increase by 2times (2x)
-        Vector<Integer>list1=new Vector<>(11);
-        System.out.println("Capacity:"+list1.capacity());
+        Vector<Integer> list1 = new Vector<>(11);
+        System.out.println("Capacity:" + list1.capacity());
         //Capacity:11
-
 
 
         Vector<Integer> list2 = new Vector<>(5, 3);
@@ -94,7 +93,7 @@ public class VectorExample {
         list2.add(1);
         list2.add(1);
         list2.add(1);
-        System.out.println("Capacity:"+list2.capacity());
+        System.out.println("Capacity:" + list2.capacity());
         //Capacity:5
 
         list2.add(1);
