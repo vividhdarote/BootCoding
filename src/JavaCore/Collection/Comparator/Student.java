@@ -17,4 +17,11 @@ public class Student {
         return cgpa;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", cgpa=" + cgpa +
+                '}';
+    }
 }
